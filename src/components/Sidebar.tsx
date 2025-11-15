@@ -1,15 +1,14 @@
 import { Home, Calendar, Search, CreditCard, Settings, User, BarChart3, Plane } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
-import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Dashboard", icon: Home, href: "/", current: true },
-  { name: "My Bookings", icon: Calendar, href: "/payments", current: false },
-  { name: "Search Flights", icon: Search, href: "/payments", current: false },
-  { name: "Flight Status", icon: Plane, href: "/payments", current: false },
-  { name: "Analytics", icon: BarChart3, href: "/payments", current: false },
-  { name: "Payments", icon: CreditCard, href: "/payments", current: false },
-  { name: "Settings", icon: Settings, href: "/payments", current: false },
+  { name: "Dashboard", icon: Home, href: "/" },
+  { name: "My Bookings", icon: Calendar, href: "/bookings" },
+  { name: "Search Flights", icon: Search, href: "/search" },
+  { name: "Flight Status", icon: Plane, href: "/status" },
+  { name: "Analytics", icon: BarChart3, href: "/analytics" },
+  { name: "Payments", icon: CreditCard, href: "/payments" },
+  { name: "Settings", icon: Settings, href: "/settings" },
 ];
 
 const Sidebar = () => {
@@ -25,6 +24,7 @@ const Sidebar = () => {
           <NavLink
             key={item.name}
             to={item.href}
+            end={item.href === "/"}
             className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all text-muted-foreground hover:bg-accent hover:text-accent-foreground"
             activeClassName="bg-accent text-accent-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
           >
