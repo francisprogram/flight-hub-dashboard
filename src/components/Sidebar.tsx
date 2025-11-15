@@ -26,7 +26,7 @@ const Sidebar = () => {
             key={item.name}
             to={item.href}
             className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-            activeClassName="bg-primary text-primary-foreground shadow-sm hover:bg-primary hover:text-primary-foreground"
+            activeClassName="bg-accent text-accent-foreground shadow-sm hover:bg-accent hover:text-accent-foreground"
           >
             <item.icon className="h-5 w-5" />
             {item.name}
@@ -36,7 +36,7 @@ const Sidebar = () => {
 
       <div className="border-t p-4">
         <div className="flex items-center gap-3 rounded-lg bg-muted p-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
             <User className="h-5 w-5" />
           </div>
           <div className="flex-1 min-w-0">
