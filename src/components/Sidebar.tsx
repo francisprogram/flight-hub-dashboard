@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Dashboard", icon: Home, href: "/", current: true },
-  { name: "My Bookings", icon: Calendar, href: "#", current: false },
-  { name: "Search Flights", icon: Search, href: "#", current: false },
-  { name: "Flight Status", icon: Plane, href: "#", current: false },
-  { name: "Analytics", icon: BarChart3, href: "#", current: false },
+  { name: "My Bookings", icon: Calendar, href: "/payments", current: false },
+  { name: "Search Flights", icon: Search, href: "/payments", current: false },
+  { name: "Flight Status", icon: Plane, href: "/payments", current: false },
+  { name: "Analytics", icon: BarChart3, href: "/payments", current: false },
   { name: "Payments", icon: CreditCard, href: "/payments", current: false },
-  { name: "Settings", icon: Settings, href: "#", current: false },
+  { name: "Settings", icon: Settings, href: "/payments", current: false },
 ];
 
 const Sidebar = () => {
