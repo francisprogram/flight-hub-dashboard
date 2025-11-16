@@ -48,49 +48,58 @@ const bookings = [
 
 const RecentBookings = () => {
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Recent Bookings</CardTitle>
-        <Button variant="outline" size="sm">
+    <Card className="bg-card/80 shadow-card-lg backdrop-blur">
+      <CardHeader className="flex flex-row items-center justify-between border-b bg-card/60 pb-4">
+        <CardTitle className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          Recent bookings
+        </CardTitle>
+        <Button
+          variant="outline"
+          size="sm"
+          className="border-primary/30 text-primary hover:bg-primary/5"
+        >
           <Download className="mr-2 h-4 w-4" />
           Export
         </Button>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pt-4">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b">
-                <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">
+              <tr className="border-b border-border/80 bg-muted/40">
+                <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Booking ID
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">
+                <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Route
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">
+                <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Date
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">
+                <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Passenger
                 </th>
-                <th className="text-left py-3 px-4 text-sm font-medium text-muted-foreground">
+                <th className="py-3 px-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Status
                 </th>
-                <th className="text-right py-3 px-4 text-sm font-medium text-muted-foreground">
+                <th className="py-3 px-4 text-right text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Amount
                 </th>
-                <th className="text-right py-3 px-4 text-sm font-medium text-muted-foreground">
+                <th className="py-3 px-4 text-right text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                   Actions
                 </th>
               </tr>
             </thead>
             <tbody>
               {bookings.map((booking) => (
-                <tr key={booking.id} className="border-b last:border-0 hover:bg-muted/50 transition-colors">
-                  <td className="py-3 px-4 text-sm font-medium text-foreground">
+                <tr
+                  key={booking.id}
+                  className="border-b border-border/60 transition-colors last:border-0 hover:bg-muted/40"
+                >
+                  <td className="py-3 px-4 text-sm font-medium text-foreground/90">
                     {booking.id}
                   </td>
-                  <td className="py-3 px-4 text-sm text-foreground font-medium">
+                  <td className="py-3 px-4 text-sm font-medium text-foreground">
                     {booking.route}
                   </td>
                   <td className="py-3 px-4 text-sm text-muted-foreground">
@@ -110,10 +119,10 @@ const RecentBookings = () => {
                       }
                       className={
                         booking.status === "Confirmed"
-                          ? "bg-green-100 text-green-800 hover:bg-green-100"
+                          ? "bg-sky-500/10 text-sky-700 hover:bg-sky-500/15"
                           : booking.status === "Pending"
-                          ? "bg-yellow-100 text-yellow-800 hover:bg-yellow-100"
-                          : ""
+                          ? "bg-amber-500/10 text-amber-700 hover:bg-amber-500/15"
+                          : "bg-emerald-500/10 text-emerald-700 hover:bg-emerald-500/15"
                       }
                     >
                       {booking.status}
@@ -123,7 +132,7 @@ const RecentBookings = () => {
                     {booking.amount}
                   </td>
                   <td className="py-3 px-4 text-right">
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" className="text-muted-foreground hover:bg-muted/60">
                       <MoreHorizontal className="h-4 w-4" />
                     </Button>
                   </td>

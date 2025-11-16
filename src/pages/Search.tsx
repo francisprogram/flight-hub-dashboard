@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 const Search = () => {
   return (
-    <div className="flex h-screen w-full bg-background">
+    <div className="flex h-screen w-full bg-background bg-hero-gradient">
       <Sidebar />
 
       <div className="flex flex-1 flex-col overflow-hidden">
@@ -116,4 +116,3 @@ const Search = () => {
 };
 
 export default Search;
-

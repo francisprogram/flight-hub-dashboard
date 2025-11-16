@@ -6,7 +6,7 @@ import UpcomingFlights from "@/components/UpcomingFlights";
 
 const Index = () => {
   return (
-    <div className="flex h-screen w-full bg-background">
+    <div className="flex h-screen w-full bg-background bg-hero-gradient">
       <Sidebar />
       
       <div className="flex flex-1 flex-col overflow-hidden">

@@ -40,17 +40,19 @@ const flights = [
 
 const UpcomingFlights = () => {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Upcoming Flights</CardTitle>
+    <Card className="bg-card/80 shadow-card-lg backdrop-blur">
+      <CardHeader className="border-b bg-card/60 pb-4">
+        <CardTitle className="text-sm font-semibold tracking-[0.18em] uppercase text-muted-foreground">
+          Upcoming flights
+        </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {flights.map((flight) => (
           <div
             key={flight.id}
-            className="rounded-lg border bg-card p-4 hover:shadow-card transition-shadow"
+            className="rounded-xl border border-slate-200/70 bg-background/60 p-4 shadow-card transition-shadow hover:shadow-card-lg"
           >
-            <div className="flex items-start justify-between mb-3">
+            <div className="mb-3 flex items-start justify-between">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg bg-primary/10 p-2">
                   <Plane className="h-5 w-5 text-primary" />
@@ -60,12 +62,12 @@ const UpcomingFlights = () => {
                   <p className="text-sm text-muted-foreground">{flight.flightNo}</p>
                 </div>
               </div>
-              <Button size="sm" variant="outline">
+              <Button size="sm" variant="outline" className="border-primary/30 text-primary hover:bg-primary/5">
                 View Details
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-3">
+            <div className="mb-3 grid grid-cols-3 gap-4">
               <div className="space-y-1">
                 <div className="flex items-center gap-1 text-xs text-muted-foreground">
                   <MapPin className="h-3 w-3" />
@@ -90,14 +92,14 @@ const UpcomingFlights = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-3 border-t">
+            <div className="flex items-center justify-between border-t pt-3">
               <div className="flex items-center gap-4 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <Calendar className="h-3 w-3" />
                   Gate: {flight.gate}
                 </span>
               </div>
-              <Button size="sm" variant="ghost" className="text-primary hover:text-primary">
+              <Button size="sm" variant="ghost" className="text-primary hover:bg-primary/5 hover:text-primary">
                 Check-in
               </Button>
             </div>
